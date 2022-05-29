@@ -1,0 +1,60 @@
+@startuml
+
+start
+
+repeat
+
+#palegreen:Active;
+-> User issues
+"remove-unit";
+
+if (Does the Unit\n have relation(s)?) then (<color:green>yes)
+  #yellow:relation departed;
+  note left
+    Triggered at each
+    remaining Unit once
+    for each Unit leaving,
+    and at the Unit leaving
+    for each remaining Unit
+  end note
+
+  if (Is this Unit a departing Unit?) then (<color:green>yes)
+    #yellow:relation broken;
+  else (<color:red>no)
+
+  endif
+
+else (<color:red>no)
+
+endif
+
+repeat while (Is this Unit a remaining Unit?) is (yes)
+->no;
+
+  if (Does the Unit\n have storage?) then (<color:green>yes)
+    #yellow:storage detached;
+  else (<color:red>no)
+
+  endif
+
+  #yellow:stop;
+  note right
+    Stops the
+    workload
+  end note
+
+  #yellow:remove;
+  note right
+    Removes the contents of
+    the workload, e.g. the
+    app and any packages
+  end note
+
+  #red:Dead;
+  note left
+    Unit is dead
+  end note
+
+  stop
+
+@enduml

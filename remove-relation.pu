@@ -1,0 +1,32 @@
+@startuml
+
+start
+
+repeat
+
+#palegreen:Active;
+-> User issues
+"remove-relation";
+
+#yellow:relation departed;
+note left
+  Triggered when a Unit
+  leaves a Relation.
+  Triggered at a remaining
+  Unit once for each Unit leaving.
+  Triggered at a departing Unit
+  once for each remaining Unit.
+end note
+
+if (Is this Unit a departing unit?) then (<color:green>yes)
+  #yellow:relation broken;
+  note left
+    Called after each Unit
+    in the Relation has run
+    "relation departed"
+  end note
+else (<color:red>no)
+
+endif
+
+@enduml

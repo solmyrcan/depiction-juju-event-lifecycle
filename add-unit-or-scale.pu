@@ -1,0 +1,56 @@
+@startuml
+
+start
+
+repeat
+  #palegreen:Active;
+  -> User issues
+  "add-unit" or "scale";
+
+if (Does the Unit\n need storage?) then (<color:green>yes)
+  #yellow:storage attached;
+else (<color:red>no)
+
+endif
+
+#yellow:install;
+
+if (Does the Unit\n need relation(s)?) then (<color:green>yes)
+
+  #yellow:relation joined;
+  note right
+    Triggered when a Unit
+    joins a Relation. All
+    Units in the Relation
+    receive this event.
+    Includes info on IP
+    addresses.
+  end note
+
+  #yellow:relation changed;
+  note left
+    Triggered whenever
+    data about the Relation
+    is changed
+  end note
+
+  if (Is this an Existing Unit?) then (<color:green>yes)
+    #yellow:config changed;
+  else (<color:red>no)
+
+  endif
+
+else (<color:red>no)
+
+endif
+
+if (Is the Unit\n the Leader?) then (<color:green>yes)
+  #yellow:leader elected;
+else (<color:red>no)
+
+endif
+
+#yellow:config changed;
+#yellow:start;
+
+@enduml

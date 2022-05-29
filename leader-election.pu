@@ -1,0 +1,12 @@
+@startuml
+
+start
+
+repeat
+  #palegreen:Active;
+  -> Leader election
+ is triggered;
+  #yellow:leader elected;
+  #yellow:config changed;
+
+@enduml

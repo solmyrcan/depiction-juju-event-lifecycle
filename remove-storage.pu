@@ -1,0 +1,11 @@
+@startuml
+
+start
+
+repeat
+  #palegreen:Active;
+  -> User issues
+  "remove-storage";
+  #yellow:storage detached;
+
+@enduml

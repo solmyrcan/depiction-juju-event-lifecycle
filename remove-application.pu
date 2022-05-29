@@ -1,0 +1,17 @@
+@startuml
+
+start
+
+#palegreen:Active;
+-> User issues
+"remove-application";
+
+:    Execute
+"remove-unit"
+     for Unit;
+note left
+  For each Unit
+end note
+
+#red:Dead;
+@enduml

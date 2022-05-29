@@ -1,0 +1,11 @@
+@startuml
+
+start
+
+repeat
+  #palegreen:Active;
+  -> User issues
+  "add-storage";
+  #yellow:storage attached;
+
+@enduml

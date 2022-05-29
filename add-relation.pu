@@ -1,0 +1,32 @@
+@startuml
+
+start
+
+repeat
+
+#palegreen:Active;
+-> User issues
+"add-relation";
+
+#yellow:relation created;
+note left
+  Only "requires or "provides"
+  type of relation here.
+end note
+
+fork
+  #yellow:relation joined;
+  note left
+    Triggered when a Unit joins
+    the Relation. All Units in
+    the Relation receive this event.
+    Includes info on IP address.
+  end note
+fork again
+  #yellow:config changed;
+end fork
+
+#yellow:relation changed;
+#yellow:config changed;
+
+@enduml

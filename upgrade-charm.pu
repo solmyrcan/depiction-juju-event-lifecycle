@@ -1,0 +1,12 @@
+@startuml
+
+start
+
+repeat
+  #palegreen:Active;
+  -> User issues
+  "upgrade-charm";
+  #yellow:upgrade charm;
+  #yellow:config changed;
+
+@enduml

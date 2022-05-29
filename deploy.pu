@@ -1,0 +1,39 @@
+@startuml
+
+start
+
+-> User issues
+"deploy";
+
+if (Does the Unit\n need storage?) then (<color:green>yes)
+  #yellow:storage attached;
+else (<color:red>no)
+
+endif
+
+#yellow:install;
+
+if (Does the Unit\n need relation(s)?) then (<color:green>yes)
+  #yellow:relation created;
+  note right
+    If a relation is set
+    up at install time,
+    e.g. a peer relation
+  end note
+else (<color:red>no)
+
+endif
+
+if (Is the Unit\n the Leader?) then (<color:green>yes)
+  #yellow:leader elected;
+else (<color:red>no)
+
+endif
+
+#yellow:config changed;
+#yellow:start;
+#palegreen:Active;
+
+
+
+@enduml
