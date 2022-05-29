@@ -54,3 +54,7 @@ In addition, the following lifecycycle events are provided:
 1. Leader election - The sequence of lifecycle events when a leader unit is elected.
 
 ![leader-election](leader-election.png)
+
+2. Set relation data - The sequence of events when data are set by another Application in the same Relation.
+
+![set-relation-data](set-relation-data.png)
