@@ -3,6 +3,8 @@ This repository includes PlantUML files that can be used to generate the flow cy
 
 1. deploy
 
+![deploy](deploy.png)
+
 2. add-unit / scale
 
 3. upgrade-charm
