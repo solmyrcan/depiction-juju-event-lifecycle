@@ -1,0 +1,12 @@
+@startuml
+
+start
+
+repeat
+  #palegreen:Active;
+  -> Another charm sets
+  App/Unit data";
+  #yellow:relation changed;
+  #yellow:config changed;
+
+@enduml
